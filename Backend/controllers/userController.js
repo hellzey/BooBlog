@@ -14,30 +14,15 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    const user = await User.findOne({ email, password });
-    if (!user) return res.status(400).json({ error: 'Credenciales incorrectas' });
 
-    res.status(200).json({ message: 'Inicio de sesión exitoso', user });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
+    const user = await User.findOne({ email });
+    if (!user) return res.status(404).json({ message: 'Usuario no encontrado' });
 
-exports.getProfile = async (req, res) => {
-  try {
-    const user = await User.findById(req.params.id).select('-password');
-    if (!user) return res.status(404).json({ error: 'Usuario no encontrado' });
+    if (user.password !== password) {
+      return res.status(401).json({ message: 'Contraseña incorrecta' });
+    }
 
-    res.status(200).json(user);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
-
-exports.updateProfile = async (req, res) => {
-  try {
-    const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true }).select('-password');
-    res.status(200).json({ message: 'Perfil actualizado', user: updatedUser });
+    res.json({ message: 'Login exitoso', user });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

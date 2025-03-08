@@ -8,6 +8,7 @@ const UserSchema = new mongoose.Schema({
   bio: { type: String, default: '' },
   profileCustomization: { type: Object, default: {} },
   friends: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+  groups: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Group' }],
   privacySettings: {
     visibility: { type: String, enum: ['public', 'private', 'friends'], default: 'public' },
     allowMessages: { type: Boolean, default: true },
