@@ -1,0 +1,85 @@
+/* Estilos generales para el formulario */
+.form-create-chat {
+    max-width: 600px; /* Aumentamos el máximo de ancho */
+    width: 100%; /* Hacemos que ocupe el 100% del espacio disponible hasta el máximo */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 20px;
+    background-color: #1e1e1e; /* Fondo oscuro para el formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    color: white; /* Texto blanco */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre los elementos */
+  }
+  
+  /* Estilo del título */
+  .form-create-chat h2 {
+    text-align: center;
+    color: #8a2be2; /* Color de texto púrpura */
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo de las etiquetas (Labels) */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Espacio entre label y input */
+  }
+  
+  .form-group Label {
+    font-size: 16px;
+    color: #8a2be2; /* Color de las etiquetas */
+  }
+  
+  /* Estilo de los inputs */
+  .form-group Input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #8a2be2; /* Borde de color púrpura */
+    background-color: #333; /* Fondo oscuro para los inputs */
+    color: white; /* Texto blanco */
+    font-size: 14px;
+  }
+  
+  .form-group Input:focus {
+    border-color: #6a1b9a; /* Borde más intenso cuando el input está seleccionado */
+    outline: none; /* Eliminar borde por defecto */
+  }
+  
+  /* Estilo del botón */
+  button {
+    padding: 12px;
+    background-color: #8a2be2; /* Fondo púrpura */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Hace que el botón ocupe todo el ancho */
+  }
+  
+  button:hover {
+    background-color: #6a1b9a; /* Cambio de color cuando el botón se pasa el mouse */
+  }
+  
+  button:active {
+    background-color: #4a148c; /* Fondo más oscuro cuando el botón es presionado */
+  }
+  
+  /* Estilo del enlace */
+  .form-create-chat .login-link {
+    text-align: center;
+  }
+  
+  .form-create-chat .login-link a {
+    color: #8a2be2;
+    text-decoration: none;
+  }
+  
+  .form-create-chat .login-link a:hover {
+    text-decoration: underline;
+  }
+  
+  
